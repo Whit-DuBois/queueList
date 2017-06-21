@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<!--BEGIN-->
+    <div  class="cont ainer">  
+        <header id="" class="row">
+            <article class="column">
+                <h1 id="redcup-title">Red Cup <span>Karaoke</span></h1>
+                <img class="redcup-logo" src="images/redCup.png">
+                <p></p>
+            </article>
+        </header>
+        <section id="app" class="row">
+            <article class="karaoke-list">
+				<ul is="transition-group">
+                    <li><h4>Performance List</h4></li>
+					<li v-for="user in users" class="user u-full-width" :key="user['.key']">
+						<span class="karaoke-user">{{user.name}}</span><br>
+						<span class="karaoke-song">{{user.song}}</span>
+					</li>
+                </ul>
+            </article>
+            <aside class="row">
+                
+            </aside>
+        </section>
+        <footer>
+            <nav>
+                <ul class="row">
+                    <li class="four columns"><a href="queue-list.html">List</a></li>
+                    <li class="four columns"><a href="about.html">Red Cup</a></li>
+<!--                    <li class="three columns">Queue</li>-->
+                    <li class="four columns"><a href="selection.html">Selection</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+<!--END-->
+    <script src="../../../redCup/bower_components/vue/dist/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+    <script src="js/base.js"></script>
+</body>
+</html>

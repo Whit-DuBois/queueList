@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+</head>
+<body id="selection">
+<!--BEGIN-->
+    <div  class="cont ainer">  
+        <header id="" class="row">
+            <article class="column">
+                <h1 id="redcup-title">Red Cup <span>Karaoke</span></h1>
+                <img class="redcup-logo" src="images/redCup.png">
+                <p></p>
+            </article>
+        </header>
+        <section id="app">
+            <h2 id="thank-you">Song Selection</h2>
+            <form v-on:submit.prevent="addUser" id="form" class="container">
+                    <div class="">
+                        <label for="nameInput">Name</label>
+                        <input v-model="newUser.name" class="u-full-width" placeholder="Singer Name" id="nameInput" type="text">
+                    </div>
+<!--
+				<div class="">
+					<label for="emailInput">Email</label>
+                    <input v-model="newUser.email" class="u-full-width" placeholder="email@email.com" id="emailInput" type="text">
+                </div>
+-->
+				<div>
+                	<label for="songSelection">Song Selection</label>
+                	<textarea v-model="newUser.song" class="u-full-width" placeholder="Back That Azz Up - Juvenile" id="songSelection" type="text"></textarea>
+                    
+                    <ul class="errors">
+                        <li v-show="!validation.name">Name cannot be empty.</li>
+<!--                        <li v-show="!validation.email">Please provide a valid email address.</li>-->
+                        <li v-show="!validation.song">Please provide a song selection</li>
+      		        </ul>
+                    
+                <input class="button-primary" value="Add User" type="submit">
+				</div>
+            </form>
+            
+			<article class="karaoke-list">
+				<ul is="transition-group">
+                    <li><h4>Performance List</h4></li>
+					<li v-for="user in users" class="user u-full-width" :key="user['.key']">
+					<span>{{user.name}} - {{user.song}}</span>
+<!--	          		<button v-on:click="removeSong(song)">X</button>-->
+					</li>
+				</ul>
+			</article>
+        </section>
+       
+<!--
+      <ul is="transition-group">
+        <li v-for="user in users" class="user" :key="user['.key']">
+          <span>{{user.name}} - {{user.song}}</span>
+          <button v-on:click="removeUser(user)">X</button>
+        </li>
+      </ul>
+-->
+<!--
+      <form id="form" v-on:submit.prevent="addUser">
+        <input v-model="newUser.name">
+        <input v-model="newUser.email">
+        <input type="submit" value="Add User">
+      </form>
+-->
+<!--
+      <ul class="errors">
+        <li v-show="!validation.name">Name cannot be empty.</li>
+        <li v-show="!validation.email">Please provide a valid email address.</li>
+      </ul>
+-->
+   
+        <footer>
+            <nav>
+                <ul class="row">
+                    <li class="four columns"><a href="queue-list.html">List</a></li>
+                    <li class="four columns"><a href="about.html">Red Cup</a></li>
+<!--                    <li class="three columns">Queue</li>-->
+                    <li class="four columns"><a href="selection.html">Selection</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+<!--END-->
+ 	<script src="../../../redCup/bower_components/vue/dist/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+    <script src="js/base.js"></script>
+</body>
+</html>

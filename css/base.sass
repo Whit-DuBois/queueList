@@ -1,0 +1,148 @@
+body
+    //background-color: #000000
+    //background-color: #f9f7f7
+    //color: #ffffff
+    
+.hidden
+    display: none
+    
+li 
+    text-decoration: none
+    list-style-type: none
+    text-align: center
+    padding: 20px
+    font-size: 20px
+    font-weight: 500 
+    //background-color: red
+    
+a   
+    text-decoration: none
+    
+a:hover
+    text-decoration: underline
+
+h1
+    font-size: 43px
+    padding: 20px 0 0
+    text-align: center
+    //text-transform: uppercase
+    font-weight: 500
+    color: #f01c25
+    color: #000000
+    z-index: 100
+    font-family: 'Sriracha', cursive
+    
+h4
+    text-transform: uppercase
+
+.button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary
+    background-color: #b20000
+    border-color: #fefefe
+    
+.button.button-primary:hover, button.button-primary:hover, input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover, .button.button-primary:focus, button.button-primary:focus, input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus
+    background-color: #bc0000
+ 
+//HEADER
+header
+    background-color: #ffffff
+    
+    img.redcup-logo
+        position: absolute
+        top: 1px
+        right: 8px
+        width: 150px
+
+//KARAOKE LIST
+.karaoke-list
+    margin-bottom: 80px
+        
+    ul
+        margin-bottom: 12px
+        
+        //background-color: orange
+        li:nth-of-type(odd)
+            background-color: #f2f2f2
+            //background-color: #ede3e4
+            
+        li:nth-of-type(even)
+            //background-color: #f7d1cd
+    li
+        margin-bottom: 0
+        overflow: hidden
+        text-overflow: ellipsis
+        box-sizing: border-box
+
+        *
+            white-space: nowrap
+            text-overflow: ellipsis
+            overflow: hidden
+    
+    h4
+        margin-bottom: 0
+    
+#selection
+    form
+        margin: 60px auto 50px
+		
+    .errors >
+        li
+            font-size: 16px
+            padding: 0
+        
+//FOOTER
+footer
+    nav
+        position: fixed
+        bottom: 0
+        left: 0
+        background-color: #b20000
+        //background-color: #f01c25
+        height: 50px
+        width: 100%
+        margin: 0 auto
+        padding-bottom: 20px
+        //color: #ffffff
+        text-transform: uppercase
+    
+    a
+        color: #ffffff
+        //text-tranforms: uppercase
+        
+    a:hover
+        color: #f2f2f2
+    
+    li
+        padding: 15px 10px
+        font-size: 18px
+
+@media (min-width: 550px)
+    footer
+        .columns
+            margin-left: 0
+        
+@media (max-width: 550px)
+    h1
+        span
+            display: none
+            
+    header
+        img.redcup-logo
+            position: fixed
+            top: -14px
+            right: 10px
+            width: 114px
+            
+    footer
+        //position: static
+        margin-left: 0
+        
+        .columns
+            width: 32%
+            
+        nav
+            height: 40px
+                
+@media (max-width: 370px)
+    header
+        img.redcup-logo
+            right: -10px
